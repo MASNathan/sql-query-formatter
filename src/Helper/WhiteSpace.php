@@ -90,7 +90,7 @@ class WhiteSpace
      */
     public static function removeTokenWhitespace(array &$originalTokens)
     {
-        $tokens = [];
+        $tokens = array();
         foreach ($originalTokens as $i => &$token) {
             if ($token[Tokenizer::TOKEN_TYPE] !== Tokenizer::TOKEN_TYPE_WHITESPACE) {
                 $token['i'] = $i;

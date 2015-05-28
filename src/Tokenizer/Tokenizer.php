@@ -75,12 +75,12 @@ class Tokenizer
     /**
      * @var array
      */
-    protected $tokenCache = [];
+    protected $tokenCache = array();
 
     /**
      * @var array
      */
-    protected $nextToken = [];
+    protected $nextToken = array();
 
     /**
      * @var int
@@ -105,7 +105,7 @@ class Tokenizer
     /**
      * @var array
      */
-    protected $tokens = [];
+    protected $tokens = array();
 
 
     /**
@@ -144,7 +144,7 @@ class Tokenizer
      */
     public function tokenize($string)
     {
-        return (strlen($string) > 0) ? $this->processTokens($string) : [];
+        return (strlen($string) > 0) ? $this->processTokens($string) : array();
     }
 
     /**
@@ -154,7 +154,7 @@ class Tokenizer
      */
     protected function processTokens($string)
     {
-        $this->tokens              = [];
+        $this->tokens              = array();
         $this->previousToken       = '';
         $this->currentStringLength = strlen($string);
         $this->oldStringLength     = strlen($string) + 1;
@@ -261,8 +261,8 @@ class Tokenizer
      */
     protected function parseNextToken($string, $previous = null)
     {
-        $matches         = [];
-        $this->nextToken = [];
+        $matches         = array();
+        $this->nextToken = array();
 
         WhiteSpace::isWhiteSpace($this, $string, $matches);
         Comment::isComment($this, $string);

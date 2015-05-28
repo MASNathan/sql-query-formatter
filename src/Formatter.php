@@ -137,7 +137,7 @@ class Formatter
             $this->formatDashToken($token, $i, $tokens);
         }
 
-        return trim(str_replace(["\t", " \n"], [$this->tab, "\n"], $this->formattedSql)) . "\n";
+        return trim(str_replace(array("\t", " \n"), array($this->tab, "\n"), $this->formattedSql)) . "\n";
     }
 
     /**

@@ -41,7 +41,7 @@ class Indent
     /**
      * @var array
      */
-    protected $indentTypes = [];
+    protected $indentTypes = array();
 
 
     /**
