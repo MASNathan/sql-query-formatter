@@ -36,7 +36,6 @@
     "config":
     {
         "bin-dir": "bin"
-    },
-    "minimum-stability": "stable"
+    }
 }
  
