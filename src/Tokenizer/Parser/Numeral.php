@@ -55,6 +55,9 @@ final class Numeral
      */
     protected static function getNumeralString(array &$matches)
     {
-        return [Tokenizer::TOKEN_VALUE => $matches[1], Tokenizer::TOKEN_TYPE => Tokenizer::TOKEN_TYPE_NUMBER];
+        return array(
+            Tokenizer::TOKEN_VALUE => $matches[1],
+            Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_NUMBER
+        );
     }
 }

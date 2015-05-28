@@ -51,9 +51,9 @@ final class Boundary
      */
     protected static function getBoundaryCharacter(array &$matches)
     {
-        return [
+        return array(
             Tokenizer::TOKEN_VALUE => $matches[1],
             Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_BOUNDARY
-        ];
+        );
     }
 }

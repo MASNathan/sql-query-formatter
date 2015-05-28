@@ -53,10 +53,10 @@ final class LiteralString
      */
     protected static function getFunctionString($string, array &$matches)
     {
-        return [
+        return array(
             Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_RESERVED,
             Tokenizer::TOKEN_VALUE => substr($string, 0, strlen($matches[1]) - 1)
-        ];
+        );
     }
 
     /**
@@ -67,13 +67,13 @@ final class LiteralString
     public static function getNonReservedString(Tokenizer $tokenizer, $string, array &$matches)
     {
         if (!$tokenizer->getNextToken()) {
-            $data    = [];
+            $data    = array();
 
             if (1 == preg_match('/^(.*?)($|\s|["\'`]|' . $tokenizer->getRegexBoundaries() . ')/', $string, $matches)) {
-                $data = [
+                $data = array(
                     Tokenizer::TOKEN_VALUE => $matches[1],
                     Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_WORD
-                ];
+                );
             }
 
             $tokenizer->setNextToken($data);

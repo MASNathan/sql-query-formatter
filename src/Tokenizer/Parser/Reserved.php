@@ -21,11 +21,11 @@ final class Reserved
     /**
      * @var array
      */
-    protected static $regex = [
+    protected static $regex = array(
         Tokenizer::TOKEN_TYPE_RESERVED_TOP_LEVEL => 'getRegexReservedTopLevel',
         Tokenizer::TOKEN_TYPE_RESERVED_NEWLINE   => 'getRegexReservedNewLine',
         Tokenizer::TOKEN_TYPE_RESERVED           => 'getRegexReserved'
-    ];
+    );
 
     /**
      * @param Tokenizer  $tokenizer
@@ -36,7 +36,7 @@ final class Reserved
      */
     public static function isReserved(Tokenizer $tokenizer, $string, $previous)
     {
-        $tokenData = [];
+        $tokenData = array();
 
         if (!$tokenizer->getNextToken() && self::isReservedPrecededByDotCharacter($previous)) {
             $upperCase = strtoupper($string);
@@ -69,7 +69,7 @@ final class Reserved
      */
     protected static function getReservedString(array &$tokenData, $type, $string, Tokenizer $tokenizer)
     {
-        $matches = [];
+        $matches = array();
         $method  = self::$regex[$type];
 
         if (empty($tokenData) && self::isReservedString(
@@ -109,9 +109,9 @@ final class Reserved
      */
     protected static function getStringTypeArray($type, $string, array &$matches)
     {
-        return [
+        return array(
             Tokenizer::TOKEN_TYPE  => $type,
             Tokenizer::TOKEN_VALUE => substr($string, 0, strlen($matches[1]))
-        ];
+        );
     }
 }

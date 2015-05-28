@@ -86,9 +86,9 @@ final class Comment
 
         $last = ($last === false) ? strlen($string) : $last;
 
-        return [
+        return array(
             Tokenizer::TOKEN_VALUE => substr($string, 0, $last),
             Tokenizer::TOKEN_TYPE  => $type
-        ];
+        );
     }
 }

@@ -52,10 +52,10 @@ final class Quoted
             $tokenType = Tokenizer::TOKEN_TYPE_BACK_TICK_QUOTE;
         }
 
-        return [
+        return array(
             Tokenizer::TOKEN_TYPE  => $tokenType,
             Tokenizer::TOKEN_VALUE => self::wrapStringWithQuotes($string)
-        ];
+        );
     }
 
     /**

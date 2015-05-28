@@ -50,10 +50,10 @@ final class UserDefined
      */
     protected static function getUserDefinedVariableString(&$string)
     {
-        $returnData = [
+        $returnData = array(
             Tokenizer::TOKEN_VALUE => null,
             Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_VARIABLE
-        ];
+        );
 
         self::setTokenValueStartingWithAtSymbolAndWrapped($returnData, $string);
         self::setTokenValueStartingWithAtSymbol($returnData, $string);
@@ -79,7 +79,7 @@ final class UserDefined
     protected static function setTokenValueStartingWithAtSymbol(array &$returnData, $string)
     {
         if (null === $returnData[Tokenizer::TOKEN_VALUE]) {
-            $matches = [];
+            $matches = array();
             preg_match('/^(@[a-zA-Z0-9\._\$]+)/', $string, $matches);
             if ($matches) {
                 $returnData[Tokenizer::TOKEN_VALUE] = $matches[1];

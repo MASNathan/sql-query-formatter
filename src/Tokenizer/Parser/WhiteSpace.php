@@ -48,9 +48,9 @@ final class WhiteSpace
      */
     public static function getWhiteSpaceString(array &$matches)
     {
-        return [
+        return array(
             Tokenizer::TOKEN_VALUE => $matches[0],
             Tokenizer::TOKEN_TYPE  => Tokenizer::TOKEN_TYPE_WHITESPACE
-        ];
+        );
     }
 }
